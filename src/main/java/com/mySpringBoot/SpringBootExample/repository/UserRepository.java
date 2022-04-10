@@ -14,7 +14,9 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     <S extends User> S save(S entity);
 
     @Override
-    User getById(Integer integer);
+    User getById(Integer integer);   // if we use this method. when entity is not found by id getting javax.persistence.EntityNotFoundException' exception
+
+    User getUserById(final Integer id);
 
     @Override
     List<User> findAll();
